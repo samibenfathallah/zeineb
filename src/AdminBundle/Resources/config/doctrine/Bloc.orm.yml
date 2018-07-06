@@ -1,0 +1,15 @@
+AdminBundle\Entity\Bloc:
+    type: entity
+    table: null
+    repositoryClass: AdminBundle\Repository\BlocRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+AdminBundle\Entity\Responsables:
+    type: entity
+    table: null
+    repositoryClass: AdminBundle\Repository\ResponsablesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

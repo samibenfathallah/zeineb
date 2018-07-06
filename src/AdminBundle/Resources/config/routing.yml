@@ -1,0 +1,145 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+
+admin_bloc:
+    path:     /blocs
+    defaults: { _controller: AdminBundle:Bloc:bloc }
+    
+export_excel_bloc:
+    path:     /excel_blocs
+    defaults: { _controller: AdminBundle:Bloc:exportexcel }
+    
+export_pdf_bloc:
+    path:     /pdf_blocs
+    defaults: { _controller: AdminBundle:Bloc:exportpdf }
+    
+admin_menu:
+    path:     /menus
+    defaults: { _controller: AdminBundle:Menu:menu }
+    methods:  GET
+    
+admin_menu2:
+    path:     /menus2
+    defaults: { _controller: AdminBundle:Menu2:menu }
+    methods:  GET
+    
+admin_image:
+    path:     /listeimages
+    defaults: { _controller: AdminBundle:Images:imagesliste }
+
+valide_ajout_image:
+    path:     /valideimage
+    defaults: { _controller: AdminBundle:Images:valideimage }
+    
+add_bloc:
+    path:     /addbloc
+    defaults: { _controller: AdminBundle:Bloc:addbloc }
+    
+add_menu:
+    path:     /addmenu
+    defaults: { _controller: AdminBundle:Menu:addmenu }
+    
+add_menu2:
+    path:     /addmenu2
+    defaults: { _controller: AdminBundle:Menu2:addmenu }
+    
+
+add_image:
+    path:     /addimage
+    defaults: { _controller: AdminBundle:Images:addimage }
+
+edit_bloc:
+    path:     /editbloc
+    defaults: { _controller: AdminBundle:Bloc:editbloc }
+    methods:  GET
+    
+edit_menu:
+    path:     /editmenu
+    defaults: { _controller: AdminBundle:Menu:editmenu }
+    methods:  GET
+    
+edit_menu2:
+    path:     /editmenu2
+    defaults: { _controller: AdminBundle:Menu2:editmenu }
+    methods:  GET
+
+edit_image:
+    path:     /editimage
+    defaults: { _controller: AdminBundle:Images:editimage }
+    methods:  GET
+
+valide_edit_image:
+    path: /valide_editimage
+    defaults: { _controller: AdminBundle:Images:valideeditimage }
+    
+valide_edit_bloc:
+    path: /valide_editbloc
+    defaults: { _controller: AdminBundle:Bloc:valideeditbloc }
+
+valide_edit_menu:
+    path: /valide_editmenu
+    defaults: { _controller: AdminBundle:Menu:valideeditmenu }
+    methods:  GET|POST
+    
+valide_edit_menu2:
+    path: /valide_editmenu2
+    defaults: { _controller: AdminBundle:Menu2:valideeditmenu }
+    methods:  GET|POST
+    
+delete_bloc:
+    path: /deletebloc
+    defaults: { _controller: AdminBundle:Bloc:deletebloc }
+
+delete_menu:
+    path: /deletemenu
+    defaults: { _controller: AdminBundle:Menu:deletemenu }
+
+delete_menu2:
+    path: /deletemenu2
+    defaults: { _controller: AdminBundle:Menu2:deletemenu }
+
+delete_image:
+    path: /deleteimage
+    defaults: { _controller: AdminBundle:Images:deleteimage }
+    
+valide_ajout_bloc:
+    path:     /validebloc
+    defaults: { _controller: AdminBundle:Bloc:validebloc }
+    
+    
+valide_ajout_menu:
+    path:     /validemenu
+    defaults: { _controller: AdminBundle:Menu:validemenu }
+    
+valide_ajout_menu2:
+    path:     /validemenu2
+    defaults: { _controller: AdminBundle:Menu2:validemenu }
+    
+
+    
+admin_service:
+    path:     /services
+    defaults: { _controller: AdminBundle:Service:service }
+
+liste_service:
+    path:     /listeservices
+    defaults: { _controller: AdminBundle:Service:listeservices }
+    
+serviceCreate:
+    path:     /createservices
+    defaults: { _controller: AdminBundle:Service:servicecreate }
+    
+serviceDelete:
+    path:     /deleteservices
+    defaults: { _controller: AdminBundle:Service:servicedelete }
+serviceEdit:
+    path:     /editservices
+    defaults: { _controller: AdminBundle:Service:serviceedit }
+printDoc:
+    path:     /printdoc
+    defaults: { _controller: AdminBundle:Bloc:print }
+liste_responsable:
+    path:     /listeresponsable
+    defaults: { _controller: AdminBundle:Responsables:ListeResponsbales }
+    

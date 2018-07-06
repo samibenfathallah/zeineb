@@ -1,0 +1,16 @@
+AdminBundle\Entity\Menu2:
+    type: entity
+    table: null
+    repositoryClass: AdminBundle\Repository\Menu2Repository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        url:
+            type: text
+    lifecycleCallbacks: {  }

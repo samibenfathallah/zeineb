@@ -1,0 +1,92 @@
+{% include "AdminBundle:Default:menu.html.twig" %}
+{% block contenu %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Gestion des Blocs 
+                {% if valideadd is defined %} <span style='color:red'><b>Le bloc est bien ajouté.</b></span>  {% endif %}
+                {% if valideedit is defined %} <span style='color:red'><b>Le bloc est bien Modifié.</b></span>  {% endif %}
+                {% if validesupp is defined %} <span style='color:red'><b>Le bloc est bien supprimé.</b></span>  {% endif %}
+                
+                <a class="btn btn-sm btn-success" href='{{path('add_bloc')}}'>
+                    <i class="fa fa-plus"></i>
+                </a>
+                <a class="btn btn-sm btn-success" href='{{path('export_excel_bloc')}}'>
+                    <i class="fa fa-file-excel-o"></i>
+                </a>
+                <a class="btn btn-sm btn-danger" href='{{path('export_pdf_bloc')}}'>
+                    <i class="fa fa-file-pdf-o"></i>
+                </a>
+                <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Gestion des Blocs</li>
+            </ol>
+        </section>
+
+
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title"></h3>
+                    </div>
+                    <!-- /.box-header -->
+
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr id=''>
+                                    <th>Num</th>
+                                    <th>Bloc</th>
+                                    <th>Actions</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set i=0 %}
+                                {% for bloc in blocs %}
+                                    {% set i=i+1%}
+
+                                    <tr id="tr_{{bloc.id}}_{{ i }}">
+                                        <td>{{ i }}</td>
+                                        <td id="service_{{bloc.id}}_1">{{ bloc.description }}</td>
+                                        <td>
+                                            <a id="service_{{bloc.id}}" href='{{path('edit_bloc', { 'id': bloc.id })}}' class="btn btn-info btn-xs btn-edit"><i class="fa fa-pencil"></i></a> 
+                                            <a href="{{path('delete_bloc', { 'id': bloc.id })}}" id="{{bloc.id}}_{{ i }}" class="btn btn-danger btn-xs btn-delete" onclick="return confirm('Etes vous sur de vouloir supprimer ce Bloc ?');"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr id=''>
+                                    <th>Num</th>
+                                    <th>Bloc</th>
+                                    <th>Actions</th>
+
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- /.box-body -->
+                </div>
+
+
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- /.row (main row) -->
+
+        </section>
+
+    </div>
+{% endblock %}
+
+{% include "AdminBundle:Default:footer.html.twig" %}

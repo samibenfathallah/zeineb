@@ -1,0 +1,22 @@
+AdminBundle\Entity\Images:
+    type: entity
+    table: null
+    repositoryClass: AdminBundle\Repository\ImagesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        bloc:
+            targetEntity: Bloc
+            joinColumn:
+                name: bloc
+                referencedColumnName: id
+    fields:
+        image:
+            type: text
+        description:
+            type: text
+    lifecycleCallbacks: {  }

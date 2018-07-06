@@ -1,0 +1,14 @@
+AdminBundle\Entity\Services:
+    type: entity
+    table: null
+    repositoryClass: AdminBundle\Repository\ServicesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+    lifecycleCallbacks: {  }

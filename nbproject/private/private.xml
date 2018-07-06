@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Controller/Menu2Controller.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/HomeBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Entity/Menu.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/formaddmenu2.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/formeditmenu2.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/HomeBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/menu.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/formaddmenu.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/menu_liste.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/config/doctrine/Menu.orm.yml</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Entity/Menu2.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Controller/MenuController.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/views/Default/formeditmenu.html.twig</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Repository/MenuRepository.php</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Resources/config/doctrine/Menu2.orm.yml</file>
+            <file>file:/C:/wamp/www/zeineb/src/AdminBundle/Repository/Menu2Repository.php</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,320 @@
+{% include "AdminBundle:Default:menu.html.twig" %}
+{% block contenu %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Gestion des Services <button class="btn btn-sm btn-success  new-service">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Gestion des Services</li>
+            </ol>
+        </section>
+
+
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title"></h3>
+                    </div> 
+
+
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr id=''>
+                                    <th>Num</th>
+                                    <th>Service</th>
+                                    <th>Actions</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set i=0 %}
+                                {% for service in services %}
+                                    {% set i=i+1%}
+
+                                    <tr id="tr_{{service.id}}_{{ i }}">
+                                        <td>{{ i }}</td>
+                                        <td id="service_{{service.id}}_1">{{ service.description }}</td>
+                                        <td>
+                                            <a id="service_{{service.id}}" class="btn btn-info btn-xs btn-edit"><i class="fa fa-pencil"></i></a> 
+                                            <a id="{{service.id}}_{{ i }}" class="btn btn-danger btn-xs btn-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr id=''>
+                                    <th>Num</th>
+                                    <th>Service</th>
+                                    <th>Actions</th>
+
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- /.row (main row) -->
+
+        </section>
+
+    </div>
+    <!-- add modal -->
+
+    <div id="add-modal" class="modal fade center " style="margin-top:200px" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel2" >  Add Service  </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="add-form" data-parsley-validate class="form-horizontal form-label-left">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modal-name"> Service  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" id="modal-name" name="modal-name" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <!-- <div class="ln_solid"></div>-->
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                        <button type="submit" class="btn btn-success btn-add"><i class="fa fa-plus"></i>   Valider  </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modals -->
+
+    <!-- edit modal -->
+
+    <div id="edit-modal" class="modal fade center " style="margin-top:200px" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel2" >  Edit Service  </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-form" data-parsley-validate class="form-horizontal form-label-left">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="modal-name"> Service  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" id="edit_modal-service" name="modal-name" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="hidden" id="edit_modal-service0" name="modal-name" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <!-- <div class="ln_solid"></div>-->
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                        <button type="submit" class="btn btn-success btn-edit_modal"><i class="fa fa-plus"></i>   Valider  </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modals -->
+    <!-- detete modal -->
+
+    <div id="delete-modal" class="modal fade center " style="margin-top:200px" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel2" > Service </h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="contrat-idd">
+                    <h4> Etes vous sur vouloir de supprimer ce service?</h4>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                        <button type="button" class="btn btn-danger btn-detete-confirm"><i class="fa fa-trash-o"></i> Delete </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modals -->
+    <script src="{{ asset ('bundles/admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.new-service').on('click', function () {
+
+                $('#add-modal').modal('show');
+
+
+
+            });
+
+            $('.btn-add').click(function (e) {
+                var row, idrow, idligne;
+                if ($('#example1 tbody tr:last').attr('id') != undefined)
+                {
+
+                    row = $('#example1 tbody tr:last').attr('id').split('_');
+                    idrow = row[1];
+                    idligne = row[2];
+                } else
+                {
+                    idrow = 0;
+                    idligne = 0;
+                }
+                idrow++;
+                idligne++;
+                var newservice = $("#modal-name").val();
+                if (newservice != '') {
+
+                    $.ajax({
+                        url: "{{ path('serviceCreate') }}",
+                        data: {
+
+                            service: $("#modal-name").val()
+
+                        },
+                        method: 'POST',
+                        success: function (result)
+                        {
+                            console.log(result);
+                            if (result == "200") {
+                                $('#example1 tbody').append('<tr id=\'tr_' + idrow + '_' + idligne + '\'><td>' + idligne + '</td>\n\
+            <td id=\'service_' + idrow + '_1\'>' + newservice + '</td><td>\n\
+            <a class="btn btn-info btn-xs btn-edit" id=\'service_' + idrow + '\'><i class="fa fa-pencil"></i></a>' +
+                                        ' <a id="' + idrow + '_' + idligne + '" class="btn btn-danger btn-xs btn-delete"><i class="fa fa-trash-o"></i></a></td></tr>');
+                                $("#add-form").trigger('reset');
+                                $('#add-modal').modal('hide');
+                            }
+
+                        }
+                    });
+
+                }
+
+
+            }
+            );
+
+            $('table').on('click', '.btn-edit', function (e) {
+
+                $("#edit-form").trigger('reset');
+                $('#edit-modal').modal('show');
+                $('#edit_modal-service').val($("#" + this.id + "_1").html());
+                $('#edit_modal-service0').val("#" + this.id + "_1");
+
+
+
+
+
+
+
+            });
+
+            $('.btn-edit_modal').click(function (e) {
+                if ($('#edit_modal-service').val() != '') {
+                    var id_serv =$('#edit_modal-service0').val().split('_');
+                    $.ajax({
+                        url: "{{ path('serviceEdit') }}",
+                        data: {
+
+                            serviceid: id_serv[1],
+                            service: $('#edit_modal-service').val()
+
+                        },
+                        method: 'POST',
+                        success: function (result)
+                        {
+                            console.log(result);
+                            if (result == "200") {
+                     $($('#edit_modal-service0').val()).text($('#edit_modal-service').val());
+
+
+                    $("#edit-form").trigger('reset');
+                    $('#edit-modal').modal('hide');
+                            }
+
+                        }
+                    });
+                    
+                    
+                    
+
+                }
+
+
+            })
+
+
+
+            $('table').on('click', '.btn-delete', function (e) {
+                
+                var id_tr = this.id;
+                $('#delete-modal').modal('show');
+                $('.btn-detete-confirm').on('click', function () {
+                    $.ajax({
+                        url: "{{ path('serviceDelete') }}",
+                        data: {
+
+                            serviceid: id_tr
+
+                        },
+                        method: 'POST',
+                        success: function (result)
+                        {
+                            console.log(result);
+                            if (result == "200") {
+                                $('#tr_' + id_tr).remove();
+                                $('#delete-modal').modal('hide');
+                            }
+
+                        }
+                    });
+
+
+
+
+                })
+
+            });
+
+
+        });
+
+    </script>
+{% endblock %}
+
+{% include "AdminBundle:Default:footer.html.twig" %}
